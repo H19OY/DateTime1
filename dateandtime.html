@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Date and Time</title>
+  <style>
+    body {
+        text-align: center;
+      }
+  
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+  
+      .image1 {
+        margin-right: 49px;
+      }
+
+    .image2 {
+      margin-right: 18px;
+    }
+  </style>
+</head>
+<body>
+    <br>
+    <br><br><br>
+  <div alignment="center" class="container">
+    <img class="image1" src="calendar.png" alt="Calendar">
+    <h1 id="date"></h1>
+  </div>
+  <div class="container">
+    <img class="image2" src="clock.png" alt="Clock">
+    <h1 id="time"></h1>
+  </div>
+
+  <script>
+    function updateTime() {
+      var dateElement = document.getElementById("date");
+      var timeElement = document.getElementById("time");
+
+      var currentDate = new Date();
+      var dateString = currentDate.toLocaleDateString();
+      var timeString = currentDate.toLocaleTimeString();
+
+      dateElement.textContent = dateString;
+      timeElement.textContent = timeString;
+    }
+
+    // Update the time immediately
+    updateTime();
+
+    // Update the time every second
+    setInterval(updateTime, 1000);
+  </script>
+</body>
+</html>
